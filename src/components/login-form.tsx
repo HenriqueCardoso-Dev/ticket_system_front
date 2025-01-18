@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
+import Link from "next/link"
 
 export function LoginForm({
     className,
@@ -54,9 +55,11 @@ export function LoginForm({
             </div>
             <div className="mt-4 text-center text-sm">
               Don&apos;t have an account?{" "}
-              <a className="underline underline-offset-4">
-                Sign up
-              </a>
+              <Link href={'/auth/signup'}>
+                <div className="underline underline-offset-4">
+                  Sign up
+                </div>
+              </Link>
             </div>
           </form>
         </CardContent>
