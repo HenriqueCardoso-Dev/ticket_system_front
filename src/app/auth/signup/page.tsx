@@ -1,8 +1,11 @@
+import RootLayout from "@/app/layout";
 import SignUpForm from "@/components/sign-up-form";
 
 const signUp = () => {
     return (
-        <SignUpForm/>
+        <RootLayout>
+            <SignUpForm/>
+        </RootLayout>
     )
 }
 
