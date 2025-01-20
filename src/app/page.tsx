@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Login from "./auth/login/page";
+import DashboardHome from "./dashboard/home/page";
 
 export default function Home() {
 
@@ -21,7 +22,7 @@ export default function Home() {
     }
 
     {
-      isLogged && <h1>LOGADO</h1>
+      isLogged && <DashboardHome/>
     }
   </>);
 }
