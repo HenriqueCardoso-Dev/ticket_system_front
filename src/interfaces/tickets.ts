@@ -3,7 +3,7 @@ interface intTicket {
   state: number,
   content: string,
   createByUserId: number,
-  creationDatetime: Date
+  creationDatetime: string
 }
 
 export default intTicket
