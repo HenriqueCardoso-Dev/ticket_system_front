@@ -57,6 +57,14 @@ const data = {
       isActive: true,
       items: [
         {
+          title: "Criar um Novo",
+          url: "/dashboard/tickets/create"
+        },
+        {
+          title: "Meus Tickets",
+          url: "/dashboard/tickets/me"
+        },
+        {
           title: "Em Aberto",
           url: "/dashboard/tickets",
         },
@@ -68,6 +76,10 @@ const data = {
           title: "Cancelados",
           url: "/dashboard/tickets/canceled",
         },
+        {
+          title:"Em Progresso",
+          url: "/dashboard/tickets/progress"
+        }
       ],
     },
   ],
