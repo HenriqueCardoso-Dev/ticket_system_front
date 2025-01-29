@@ -7,11 +7,13 @@ import { useEffect, useState } from "react";
 
 const CanceledTickets = () => {
 
-    const [cancelTicketsList, setCancelTicketsList] = useState<intTicket[]>();
+
+    const [ticketsData, setTicketsData] = useState<intTicket[]>();
 
     function getData() {
         axios.get('/mocks/ticketsData.json').then((res) => {
-            setCancelTicketsList(res.data);
+            const data : intTicket[] = res.data;
+            setTicketsData(data.filter(item => item.state === 3));
         })
     }
 
@@ -20,7 +22,7 @@ const CanceledTickets = () => {
     return(
         <div className="text-center flex flex-col mx-[50px]">
             <h1 className="text-[50px] mb-8">Tickets Cancelados</h1>
-            <TicketTable data={cancelTicketsList?.filter(item => item.state === 3)}/>
+            <TicketTable data={ticketsData}/>
         </div>
     )
 }

@@ -5,14 +5,13 @@ import intTicket from "@/interfaces/tickets";
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-const OpenTickets = () => {
-
-    const [ticketsData, setTicketsData] = useState<intTicket[]>();
+export default function InProgressTickets () {
+  const [ticketsData, setTicketsData] = useState<intTicket[]>();
 
     function getData() {
         axios.get('/mocks/ticketsData.json').then((res) => {
             const data : intTicket[] = res.data;
-            setTicketsData(data.filter(item => item.state === 1));
+            setTicketsData(data.filter(item => item.state === 4));
         })
     }
 
@@ -20,10 +19,8 @@ const OpenTickets = () => {
 
     return(
         <div className="text-center flex flex-col mx-[50px]">
-            <h1 className="text-[50px] mb-8">Tickets Em Aberto</h1>
+            <h1 className="text-[50px] mb-8">Tickets Em progresso</h1>
             <TicketTable data={ticketsData}/>
         </div>
     )
 }
-
-export default OpenTickets;
